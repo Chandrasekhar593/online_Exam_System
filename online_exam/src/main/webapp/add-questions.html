@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Add Question</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+    
+    h1 {
+        text-align: center;
+        margin-top: 20px;
+        color: #333;
+    }
+    
+    form {
+        width: 50%;
+        margin: 20px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    }
+    
+    table {
+        width: 100%;
+    }
+    
+    table td {
+        padding: 10px;
+    }
+    
+    input[type="text"],
+    select {
+        width: calc(100% - 20px);
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    
+    input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+</style>
+</head>
+<body>
+    <h1>Add Question</h1>
+    <form action="addquestion.jsp" method="post">
+        <table>
+            <tr>
+                <td>Enter Subject:</td>
+                <td>
+                    <select name="subject" required="true">
+                        <option>aptitude</option>
+                        <option>python</option>
+                        <option>c</option>
+                        <option>DBMS</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Enter Question:</td>
+                <td><input type="text" required="true" name="qname"></td>
+            </tr>
+            <tr>
+                <td>Option A:</td>
+                <td><input type="text" name="aop"></td>
+            </tr>
+            <tr>
+                <td>Option B:</td>
+                <td><input type="text" name="bop"></td>
+            </tr>
+            <tr>
+                <td>Option C:</td>
+                <td><input type="text" name="cop"></td>
+            </tr>
+            <tr>
+                <td>Option D:</td>
+                <td><input type="text" name="dop"></td>
+            </tr>
+            <tr>
+                <td>Correct Option:</td>
+                <td><input type="text" required="true" name="rop"></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="Submit">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

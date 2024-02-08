@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            width: 300px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        table {
+            width: 100%;
+        }
+
+        tr {
+            margin-bottom: 10px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: white;
+            cursor: pointer;
+        }
+
+        a {
+            color: #333;
+            text-decoration: none;
+        }
+    </style>
+    <script>
+		(function (global) {
+
+    if(typeof (global) === "undefined") {
+        throw new Error("window is undefined");
+    }
+
+    var _hash = "!";
+    var noBackPlease = function () {
+        global.location.href += "#";
+
+        // Making sure we have the fruit available for juice (^__^)
+        global.setTimeout(function () {
+            global.location.href += "!";
+        }, 50);
+    };
+
+    global.onhashchange = function () {
+        if (global.location.hash !== _hash) {
+            global.location.hash = _hash;
+        }
+    };
+
+    global.onload = function () {
+        noBackPlease();
+
+        // Disables backspace on page except on input fields and textarea..
+        document.body.onkeydown = function (e) {
+            var elm = e.target.nodeName.toLowerCase();
+            if (e.which === 8 && (elm !== 'input' && elm  !== 'textarea')) {
+                e.preventDefault();
+            }
+            // Stopping the event bubbling up the DOM tree...
+            e.stopPropagation();
+        };
+    }
+})(window);
+	</script>
+		
+</head>
+<body>
+    <h1>Welcome</h1>
+    <form action="addstudent.jsp" method="post">
+        <table>
+            <tr><td>Student E-Mail:</td><td><input type="email" name="sname"/></td></tr>
+            <tr><td>Student Password:</td><td><input type="password" name="spassword"/></td></tr>
+            <tr><td colspan="2"><input type="submit" value="Login"/></td></tr>
+            <tr><td colspan="2">Don't have an account? <a href="studentsignin.html">Create account</a></td></tr>
+        </table>
+    </form>
+</body>
+</html>
